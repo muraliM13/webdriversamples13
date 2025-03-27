@@ -1,6 +1,7 @@
 package testScripts;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,22 +16,26 @@ public class GooglPageTest {
 	  
 	  ChromeOptions options = new ChromeOptions();
 	 // options.setBrowserVersion("120");
-	 // WebDriver driver  = new ChromeDriver(options);
+// 	  WebDriver driver  = new ChromeDriver(options);
 //	  WebDriver driver  = new EdgeDriver();
 	  WebDriver driver  = new ChromeDriver();
-	  //driver.manage().window().maximize(); //to maximize the opened window in browser
+//	  driver.manage().window().maximize(); //to maximize the opened window in browser
 	  driver.manage().window().minimize();// to minimize the opened window in browser
 	  driver.get("https://the-internet.herokuapp.com/login");
 //	   
 //	  WebElement name= driver.findElement(By.id("username"));//withouth the xpath
-//	  WebElement name = driver.findElement(By.xpath("//input[@type='text' and @name='username']"));//with the xpath
-//	  name.sendKeys("tomsmith");
-////    WebElement pwd= driver.findElement(By.name("password"));
+	  WebElement name = driver.findElement(By.xpath("//input[@type='text' and @name='username']"));//with the xpath
+	  name.sendKeys("tomsmith");
+	 // name.clear();
+	  //name.sendKeys("welcometomsmith");
+    WebElement pwd= driver.findElement(By.name("password"));
 //	  WebElement pwd = driver.findElement(By.xpath("//input[@type='password' and @name='password']"));//with the xpathv
-//	  pwd.sendKeys("SuperSecretPassword!");
-////	  WebElement btnLogin = driver.findElement(By.className("radius"));
+	  pwd.sendKeys("SuperSecretPassword!");
+	  pwd.sendKeys(Keys.ENTER);
+	  WebElement btnLogin = driver.findElement(By.className("radius"));
 //	  WebElement btnLogin = driver.findElement(By.xpath("//i[@class='fa fa-2x fa-sign-in']"));// with the xpath for this need to inspect the page and check for the subclass name with i class;'.....' and copy that with [] @ before the class
 //	  btnLogin.click();
+	 // btnLogin.submit();
 //	  
 //	  driver.navigate().back();
 //	  System.out.println(driver.getTitle());
@@ -55,14 +60,14 @@ public class GooglPageTest {
 	  
 	  // cssSelector
 	  
-	  WebElement name= driver.findElement(By.cssSelector("input#username"));
-	  name.sendKeys("tomsmith");
-	  WebElement pwd= driver.findElement(By.name("password"));	
-	  pwd.sendKeys("SuperSecretPassword!");
-	 // WebElement btnLogin = driver.findElement(By.className(".radius"));
-	  WebElement btnLogin = driver.findElement(By.cssSelector("i.fa.fa-2x.fa-sign-in"));// with the xpath for this need to inspect the page and check for the subclass name with i class;'.....' and copy that with [] @ before the class
-	  btnLogin.click();
-	  
+//	  WebElement name= driver.findElement(By.cssSelector("input#username"));
+//	  name.sendKeys("tomsmith");
+//	  WebElement pwd= driver.findElement(By.name("password"));	
+//	  pwd.sendKeys("SuperSecretPassword!");
+//	 // WebElement btnLogin = driver.findElement(By.className(".radius"));
+//	  WebElement btnLogin = driver.findElement(By.cssSelector("i.fa.fa-2x.fa-sign-in"));// with the xpath for this need to inspect the page and check for the subclass name with i class;'.....' and copy that with [] @ before the class
+//	  btnLogin.click();
+//	  
 	  
   }
 

@@ -13,9 +13,9 @@ public class WebtableTest {
   public void dynamicWebElement() {
 		WebDriver driver  = new ChromeDriver();
 		driver.get("https://testautomationpractice.blogspot.com/");
-		List<WebElement> author = driver.findElements(By.xpath("//td[contains(text(), '2000')]//following-sibling::td"));
+		List<WebElement> items = driver.findElements(By.xpath("//td[contains(text(), '2000')]//following-sibling::td"));
 		System.out.println("details of a book..");
-		for(WebElement item:author) {
+		for(WebElement item:items) {
 			System.out.println(item.getText());
 		}
 		List<WebElement> price = driver.findElements(By.xpath("//td[contains(text(), '2000')]//folowing-sibling::td[3]"));
